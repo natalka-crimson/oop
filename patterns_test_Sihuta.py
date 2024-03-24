@@ -159,5 +159,5 @@ my_playlist.add('"I Will Always Love You" by Whitney Houston')
 my_playlist.add('"Smells Like Teen Spirit" by Nirvana')
 my_playlist.add('"Stairway to Heaven" by Led Zeppelin')
 
-for el in my_playlist:
-    print(el)
+for song in my_playlist:
+    print(song)
