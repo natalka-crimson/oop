@@ -28,11 +28,13 @@ class SinglyNode:
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
+        self.length = 0
     
     def __str__(self):
         return f'{self.head}'
     
     def append(self, data):
+        self.length += 1
         new_node = SinglyNode(data)
         
         if self.head is None:
@@ -47,6 +49,7 @@ class SinglyLinkedList:
         last_node.set_next(new_node)
     
     def insert_at_begining(self, data):
+        self.length += 1
         new_node = SinglyNode(data)
         
         new_node.set_next(self.head)
@@ -56,6 +59,7 @@ class SinglyLinkedList:
         if not self.search(key):
             raise ValueError('Key not found')
     
+        self.length += 1
         new_node = SinglyNode(data)
         temp = self.head
         while temp is not None:
@@ -89,6 +93,8 @@ class SinglyLinkedList:
     def remove(self, key):
         if not self.search(key):
             raise ValueError('Key not found')
+        
+        self.length -= 1
         
         while self.count(key) != 0:
         
@@ -150,9 +156,11 @@ my_list.insert_after_key(2, 9)
 my_list.insert_after_key('April', 4)
 print(my_list.search('April'))
 print(my_list)
+print(my_list.length)
 my_list.remove(9)
 print(my_list.count('May'))
 my_list.replace_all(2, 7)
 print(my_list)
 my_list.replace_first('May', 5)
 print(my_list)
+print(my_list.length)
