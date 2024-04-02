@@ -33,6 +33,9 @@ class SinglyLinkedList:
     def __str__(self):
         return f'{self.head}'
     
+    def __len__(self):
+        return self.length
+    
     def append(self, data):
         self.length += 1
         new_node = SinglyNode(data)
@@ -156,11 +159,11 @@ my_list.insert_after_key(2, 9)
 my_list.insert_after_key('April', 4)
 print(my_list.search('April'))
 print(my_list)
-print(my_list.length)
+print(len(my_list))
 my_list.remove(9)
 print(my_list.count('May'))
 my_list.replace_all(2, 7)
 print(my_list)
 my_list.replace_first('May', 5)
 print(my_list)
-print(my_list.length)
+print(len(my_list))
